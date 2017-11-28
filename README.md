@@ -148,6 +148,13 @@ Now you should be able to run duplicity almost as if it were installed, example:
 
     $ PASSPHRASE=123456 duplicity --progress /mnt rsync://user@example.com/some_dir
 
+## Bandwidth control
+
+If you need to limit the total bandwidth used by the container, you
+need to add an environment variable `BANDWIDTH_LIMIT`, set to the
+proper limit (using the `tc` syntax).  If you do this, you must also
+run the container with NET_ADMIN priviledges.
+
 
 ## See also
 

@@ -18,9 +18,12 @@ RUN set -x \
  && mkdir -p /root/.cache/duplicity \
  && mkdir -p /root/duplicity/.gnupg 
 
+add entry.sh /entry.sh
 
 ENV HOME=/root
 
 VOLUME ["/root/.cache/duplicity", "/root/.gnupg"]
+
+ENTRYPOINT ["/bin/sh", "/entry.sh"]
 
 CMD ["duplicity"]
