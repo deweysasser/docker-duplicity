@@ -4,6 +4,7 @@ RUN set -x \
  && apk add --no-cache \
         ca-certificates \
         duplicity \
+	iproute2 \
         openssh \
         openssl \
         py-crypto \
@@ -14,15 +15,12 @@ RUN set -x \
  && update-ca-certificates \
  && pip install pydrive==1.3.1 \
  && apk del --purge py-pip \
- && adduser -D -u 1896 duplicity \
- && mkdir -p /home/duplicity/.cache/duplicity \
- && mkdir -p /home/duplicity/.gnupg \
- && chmod -R go+rwx /home/duplicity/
+ && mkdir -p /root/.cache/duplicity \
+ && mkdir -p /root/duplicity/.gnupg 
 
-ENV HOME=/home/duplicity
 
-VOLUME ["/home/duplicity/.cache/duplicity", "/home/duplicity/.gnupg"]
+ENV HOME=/root
 
-USER duplicity
- 
+VOLUME ["/root/.cache/duplicity", "/root/.gnupg"]
+
 CMD ["duplicity"]
