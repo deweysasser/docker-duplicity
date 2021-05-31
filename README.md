@@ -1,3 +1,14 @@
+ARCHIVED
+========
+
+This project is no longer maintained.  
+
+See the [upstream](https://github.com/wernight/docker-duplicity) if you want to use it.
+
+---
+
+
+
 [![](https://images.microbadger.com/badges/image/wernight/duplicity.svg)](https://microbadger.com/images/wernight/duplicity "Get your own image badge on microbadger.com")
 
 Dockerized **[duplicity](http://duplicity.nongnu.org/)** backup tool.
